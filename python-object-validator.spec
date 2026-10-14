@@ -11,7 +11,7 @@ validate arbitrary Python objects or to support custom validation rules.}
 
 Name:    python-%project_name
 Version: 0.2.0
-Release: 4.ROCKIT3%{?dist}
+Release: 4.ROCKIT4%{?dist}
 Summary: Python object validation module
 
 Group:   Development/Libraries
@@ -31,6 +31,7 @@ BuildRequires: python%{python3_pkgversion}-devel
 BuildRequires: python%{python3_pkgversion}-setuptools
 %if 0%{with tests}
 BuildRequires: python%{python3_pkgversion}-pytest >= 2.2.4
+BuildRequires: python%{python3_pkgversion}-setuptools <= 72.0.0
 %endif  # with tests
 Obsoletes: python36-%project_name
 Conflicts: python36-%project_name
@@ -64,6 +65,9 @@ make PYTHON=%{__python3} check
 
 
 %changelog
+* Tue Jun 23 2026 Linar Nasyyrov <lnasyyrov@k2.cloud> - 0.2.0-4.ROCKIT4
+- Add RedOS 8.0 support
+
 * Tue Jan 23 2023 Andrey Kulaev <adkulaev@gmail.com> - 0.2.0-4
 - Add centos 8.4 support
 
